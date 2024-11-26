@@ -2,9 +2,10 @@ import {session, Telegraf} from 'telegraf'
 import CatchBot from "./bot/catch.js"
 import {Stage} from "telegraf/scenes"
 import {get, set, delele} from "./services/redis.js"
-import {testScene} from "./bot/scene/test.js";
+import testScene from "./bot/scene/test.js";
+import wizardScene from './bot/scene/wizard.js';
 
-const stage = new Stage([testScene])
+const stage = new Stage([testScene, wizardScene])
 
 const bot = new Telegraf(process.env.BOT_TOKEN || '')
 
@@ -23,4 +24,4 @@ bot.on('text', async ctx => {
     // Тут идет обработка по умолчанию, если пользователь еще не в сцене
 })
 
-bot.launch().catch(err => console.error('Ошибка при запуске бота:', err))
+bot.launch(() => console.log('Бот запущен')).catch(err => console.error('Ошибка при запуске бота:', err))

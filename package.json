@@ -1,37 +1,28 @@
 {
-  "name": "youtube_bot_js",
-  "version": "1.0.1",
+  "name": "love_bot",
+  "version": "1.0.0",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "watch": "tsc --watch",
-    "dev": "ts-node-dev --respawn --transpile-only ./src/bot.ts\n",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@distube/ytdl-core": "^4.14.4",
-    "@mtproto/core": "6.3.0",
     "@prisma/client": "^5.20.0",
     "@telegraf/session": "^2.0.0-beta.7",
+    "axios": "^1.7.7",
     "dotenv": "^16.4.5",
     "ioredis": "^5.4.1",
     "telegraf-session-redis": "^0.0.2",
-    "telegram": "^2.25.9",
-    "telegram-mtproto": "^1.0.5",
-    "ts-node-dev": "^2.0.0",
-    "tsc": "^2.0.4",
-    "youtube-dl-exec": "^3.0.9",
-    "ytdl-core": "^4.11.5"
+    "telegram": "^2.25.9"
   },
   "devDependencies": {
     "node": "^22.7.0",
     "prisma": "^5.20.0",
-    "telegraf": "^4.16.3",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.6.2"
+    "telegraf": "^4.16.3"
   }
 }
